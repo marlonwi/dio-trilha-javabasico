@@ -13,15 +13,16 @@ public class Contador {
         int parametroDois = scanner.nextInt();
         scanner.close();
         try{
-            int resultado = contar(parametroUm, parametroDois);
+            int resultado = conta(parametroUm, parametroDois);
             System.out.println(resultado);
-        }catch(ParametrosInvalidosExceptions e){
-            System.out.println("O segundo parâmetro não deve ser maior que o primeiro");
+        }catch(ParametrosInvalidosException e){
+            System.out.println("O primeiro parâmetro deve ser maior que o segundo!!!");
         }
+
     }
-    static int contar(int parametroUm, int parametroDois) throws ParametrosInvalidosExceptions{
+    static int conta(int parametroUm, int parametroDois) throws ParametrosInvalidosException{
         if(parametroDois > parametroUm)
-            throw new ParametrosInvalidosExceptions();
+            throw new ParametrosInvalidosException();
         return parametroUm - parametroDois;
     }
 }
